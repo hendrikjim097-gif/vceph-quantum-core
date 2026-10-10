@@ -52,3 +52,15 @@ cd ~/vceph_client && cargo run --release
 
 ## 📄 Lisensi
 Proyek ini dilisensikan di bawah **MIT License** - bebas digunakan untuk kepentingan riset akademis maupun adopsi komersial skala industri.
+
+---
+
+## 🧠 Filosofi Proyek & Cerita Latar Belakang (Human-AI Collaboration)
+Proyek V-CEPH Quantum Core tidak lahir di laboratorium universitas ternama dengan server superkomputer berbiaya ribuan dolar. Proyek ini adalah eksperimen radikal yang digarap oleh seorang pengembang awam yang baru mengenal lingkungan **Termux** selama 2 bulan, berkolaborasi secara intensif dengan **Kecerdasan Buatan (AI)** sebagai mitra rekayasa kode.
+
+### Mengapa Proyek ini Ada?
+Sistem ini lahir dari satu pertanyaan sederhana: *“Kenapa sebagian besar blockchain warisan masa kini sangat lambat, boros memori, dan ketakutan setengah mati untuk bermigrasi ke Post-Quantum Cryptography (PQC)?”* 
+
+Alih-alih menerima dogma akademis bahwa PQC harus mengorbankan performa, kami memutuskan untuk menguji batas ekstrem arsitektur sistem terdistribusi langsung di atas perangkat keras paling minimalis yang kami miliki: sebuah handphone harian **Xiaomi Redmi Note 9**. 
+
+Di sini, manusia bertindak sebagai arsitek yang merancang konsep, batasan sistem, dan arah visi, sementara AI bertindak sebagai mesin pengetik sintaksis Rust yang presisi. V-CEPH adalah bukti nyata bahwa kolaborasi manusia-AI yang tepat dapat melompati batasan teori matematika yang rumit dan menghasilkan optimasi tingkat rendah yang fungsional.
