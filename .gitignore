@@ -1,1 +1,6 @@
-/target
+/target/
+**/*.rs.bk
+*.tar.gz
+*.gz
+stateless_node_db/
+.env
