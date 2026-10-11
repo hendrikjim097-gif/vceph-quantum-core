@@ -64,3 +64,13 @@ Sistem ini lahir dari satu pertanyaan sederhana: *“Kenapa sebagian besar block
 Alih-alih menerima dogma akademis bahwa PQC harus mengorbankan performa, kami memutuskan untuk menguji batas ekstrem arsitektur sistem terdistribusi langsung di atas perangkat keras paling minimalis yang kami miliki: sebuah handphone harian **Xiaomi Redmi Note 9**. 
 
 Di sini, manusia bertindak sebagai arsitek yang merancang konsep, batasan sistem, dan arah visi, sementara AI bertindak sebagai mesin pengetik sintaksis Rust yang presisi. V-CEPH adalah bukti nyata bahwa kolaborasi manusia-AI yang tepat dapat melompati batasan teori matematika yang rumit dan menghasilkan optimasi tingkat rendah yang fungsional.
+
+---
+
+## ☕ Dukung Eksperimen Ini (Dana Kopi / Rokok)
+
+Proyek ini dikembangkan secara mandiri menggunakan lingkungan terbatas **Termux di Xiaomi Redmi Note 9**. Jika cetak biru atau konsep rekayasa sistem berbantuan AI ini bermanfaat untuk riset atau referensi Anda, Anda bisa mendukung kelanjutan eksperimen ini secara aman melalui tautan di bawah ini:
+
+👉 **[Klik di Sini untuk Kirim Dukungan via DANA](https://m.dana.id/n/link/minta?full_url=https://qr.dana.id/v1/281012012024013182100727)**
+
+*Catatan: Tautan di atas menggunakan fitur resmi Minta DANA untuk menjaga privasi nomor telepon pengembang.*
