@@ -69,7 +69,7 @@ let db = VerkleNode::configure_stateless_db("stateless_node_db");
                     if let Ok(Some(bytes_read)) = recv_stream.read(&mut buffer).await {
 
                         // 1. Batasi ukuran biner fisik paket di gerbang awal
-                        if bytes_read < 200 || bytes_read > 8000 {
+                        if !(200..=8000).contains(&bytes_read) {
                             let _ = send_stream.write_all(b"REJECTED: Invalid Packet Size\n").await;
                             return;
                         }

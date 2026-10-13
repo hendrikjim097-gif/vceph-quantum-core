@@ -31,7 +31,7 @@ impl VerkleNode {
         if total_delta >= 0 {
             self.state_root = self.state_root.wrapping_add((total_delta as u64).wrapping_mul(GENERATOR_G));
         } else {
-            self.state_root = self.state_root.wrapping_sub((total_delta.abs() as u64).wrapping_mul(GENERATOR_G));
+            self.state_root = self.state_root.wrapping_sub((total_delta.unsigned_abs()).wrapping_mul(GENERATOR_G));
         }
 
         // Terapkan pembakaran gas berbasis BLAKE3 yang aman
