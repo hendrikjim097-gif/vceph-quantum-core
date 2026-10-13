@@ -4,30 +4,45 @@ clear
 echo "=================================================="
 echo "    V-CEPH QUANTUM CORE - NODE CONTROLLER PANEL   "
 echo "=================================================="
-echo "1. Nyalakan Storage Shard Node (Port 8090)"
-echo "2. Nyalakan Validator Node + Gas Engine (Port 8080)"
-echo "3. Tembak Transaksi Klien (Simulasi)"
-echo "4. Jalankan Uji Performa (Cargo Bench)"
+echo "1. Jalankan Validator Node (Mendengarkan WiFi & Publik - Port 8080)"
+echo "2. Jalankan Uji Sterilisasi Suite (Cargo Test)"
+echo "3. Jalankan Uji Performa Kriptografi Kisi (Cargo Bench)"
+echo "4. Cek Alamat IP WiFi Lokal Node Ini"
 echo "5. Keluar"
 echo "=================================================="
 read -p "Pilih operasi laboratorium [1-5]: " opsi
 
+# Ambil direktori proyek aktif saat ini secara dinamis
+PROYEK_DIR="$HOME/vceph-quantum-core"
+
 case $opsi in
     1)
-        echo "[*] Meluncurkan Storage Shard Node..."
-        cd ~/vceph_storage && cargo run --release
+        echo "[*] Mendeteksi konfigurasi jaringan..."
+        IP_LOKAL=$(ip route get 1.1.1.1 2>/dev/null | grep -oP 'src \K\S+')
+        echo "[+] Node Anda dapat ditembak dari WiFi di alamat: ${IP_LOKAL:-0.0.0.0}:8080"
+        echo "[*] Meluncurkan Validator Node Pasca-Kuantum..."
+        cd "$PROYEK_DIR" && cargo run --release
         ;;
     2)
-        echo "[*] Meluncurkan Validator Node..."
-        cd ~/rust_stateless && cargo run --release
+        echo "[*] Menjalankan Uji Sterilisasi Logika (5 Passed Suite)..."
+        cd "$PROYEK_DIR" && cargo test
         ;;
     3)
-        echo "[*] Meluncurkan Transaksi Klien..."
-        cd ~/vceph_client && cargo run --release
+        echo "[*] Menjalankan Uji Performa Kecepatan Nanosekon..."
+        cd "$PROYEK_DIR" && cargo bench
         ;;
     4)
-        echo "[*] Menjalankan Uji Performa Nanosekon..."
-        cd ~/rust_stateless && cargo bench
+        echo "[*] Membaca kartu jaringan internal..."
+        IP_LOKAL=$(ip route get 1.1.1.1 2>/dev/null | grep -oP 'src \K\S+')
+        if [ -z "$IP_LOKAL" ]; then
+            echo "[!] Gagal mendeteksi IP otomatis. Pastikan WiFi terhubung."
+        else
+            echo "=================================================="
+            echo " WARGA JARINGAN WIFI (LAN) BISA MENEMBAK NODE DI:"
+            echo " -> Address: $IP_LOKAL"
+            echo " -> Port   : 8080"
+            echo "=================================================="
+        fi
         ;;
     5)
         echo "[*] Selesai. Keluar dari laboratorium."
@@ -37,3 +52,4 @@ case $opsi in
         echo "[!] Opsi tidak valid!"
         ;;
 esac
+
